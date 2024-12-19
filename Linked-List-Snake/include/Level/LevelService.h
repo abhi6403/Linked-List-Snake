@@ -1,8 +1,11 @@
 #pragma once
 #include"Level/LevelController.h"
+#include"Level/LevelNumber.h"
 
 namespace Level
 {
+	class LevelController;
+
 	class LevelService
 	{
 	private:

@@ -1,16 +1,17 @@
 #pragma once
+#include <vector>
+#include "LevelModel.h"
 
 namespace Level
 {
-	enum class LevelNumber
-	{
-		ONE,
-		TWO,
-	};
+	class LevelView;
+	class LevelModel;
 
 	class LevelController
 	{
 	private:
+		LevelModel* level_model;
+		LevelView* level_view;
 
 	public:
 		LevelController();
@@ -19,6 +20,9 @@ namespace Level
 		void initialize();
 		void update();
 		void render();
+
+		float getCellWidth();
+		float getCellHeight();
 
 	};
 }
