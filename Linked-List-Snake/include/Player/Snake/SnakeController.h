@@ -1,4 +1,6 @@
 #pragma once
+#include"Player/Direction.h"
+#include<SFML/System/Vector2.hpp>
 
 namespace Player
 {
@@ -12,7 +14,10 @@ namespace Player
 	{
 	private:
 		const int initial_snake_length = 10;
-
+		const sf::Vector2i default_position = sf::Vector2i(25, 13);
+		const Direction default_direction = Direction::RIGHT;
+		
+		Direction current_snake_direction;
 		SnakeState current_snake_state;
 
 		void processPlayerInput();
@@ -22,6 +27,7 @@ namespace Player
 		void handleRestart();
 		void reset();
 		void respawnSnake();
+		void destroy();
 		
 	public:
 		SnakeController();

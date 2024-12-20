@@ -87,4 +87,9 @@ namespace Player
 	{
 		return current_snake_state;
 	}
+
+	void SnakeController::destroy()
+	{
+
+	}
 }
