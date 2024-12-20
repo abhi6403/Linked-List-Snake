@@ -16,6 +16,12 @@ namespace Player
 		float bodypart_height;
 
 		sf::Vector2f getBodyPartScreenPosition();
+		sf::Vector2i getNextPositionUp();
+		sf::Vector2i getNextPositionDown();
+		sf::Vector2i getNextPositionLeft();
+		sf::Vector2i getNextPositionRight();
+		sf::Vector2i getNextPosition();
+
 		float getRotationAngle();
 		
 		void initializeBodyPartImage();
@@ -31,5 +37,9 @@ namespace Player
 		void render();
 
 		void setDirection(Direction direction);
+		Direction getDirection();
+
+		void setPosition(sf::Vector2i position);
+		sf::Vector2i getPosition();
 	};
 }
