@@ -1,11 +1,13 @@
 #include"Player/BodyPart.h"
 #include"UI/UIElement/ImageView.h"
 #include"Global/Config.h"
+#include"Level/LevelView.h"
 
 namespace Player
 {
 	using namespace UI::UIElement;
 	using namespace Global;
+	using namespace Level;
 
 	BodyPart::BodyPart()
 	{
@@ -28,9 +30,11 @@ namespace Player
 		initializeBodyPartImage();
 	}
 
-	void BodyPart::update()
+	void BodyPart::updatePosition()
 	{
-
+		bodypart_image->setPosition(getBodyPartScreenPosition());
+		bodypart_image->setRotation(getRotationAngle());
+		bodypart_image->update();
 	}
 
 	void BodyPart::render()
@@ -48,6 +52,37 @@ namespace Player
 		bodypart_image->initialize(Config::snake_body_texture_path, bodypart_width, bodypart_height, getBodyPartScreenPosition());
 		bodypart_image->setOriginAtCentre();
 	}
+
+	sf::Vector2f BodyPart::getBodyPartScreenPosition()
+	{
+		float x_screen_position = LevelView::border_offset_left + (grid_position.x * bodypart_width) + (bodypart_width / 2);
+		float y_screen_position = LevelView::border_offset_top + (grid_position.y * bodypart_height) + (bodypart_height / 2);
+
+		return sf::Vector2f(x_screen_position, y_screen_position);
+	}
+
+	float BodyPart::getRotationAngle()
+	{
+		switch (direction)
+		{
+		case Direction::UP:
+			return 270.f;
+		case Direction::DOWN:
+			return 90.f;
+		case Direction::RIGHT:
+			return 0;
+		case Direction::LEFT:
+			return 180.f;
+		}
+	}
+
+	void BodyPart::setDirection(Direction direction)
+	{
+		this->direction = direction;
+	}
+
+	
+
 	void BodyPart::destroy()
 	{
 		delete(bodypart_image);
