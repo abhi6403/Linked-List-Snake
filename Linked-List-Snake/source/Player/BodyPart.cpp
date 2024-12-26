@@ -33,6 +33,7 @@ namespace Player
 
 	void BodyPart::updatePosition()
 	{
+		grid_position = getNextPosition();
 		bodypart_image->setPosition(getBodyPartScreenPosition());
 		bodypart_image->setRotation(getRotationAngle());
 		bodypart_image->update();
