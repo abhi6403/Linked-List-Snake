@@ -91,4 +91,10 @@ namespace Food
 	{
 		return food_type;
 	}
+
+	sf::Vector2i FoodItem::getFoodPosition()
+	{
+		return grid_position;
+	}
+
 }

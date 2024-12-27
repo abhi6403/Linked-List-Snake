@@ -2,6 +2,7 @@
 #include <SFML/System/Vector2.hpp>
 #include <vector>
 #include <random>
+#include"LinkedList/Node.h"
 
 namespace Food
 {
@@ -41,7 +42,6 @@ namespace Food
 
 		bool isValidPosition(std::vector<sf::Vector2i> position_data, sf::Vector2i food_position);
 		
-		void destroyFood();
 		void reset();
 
 	public:
@@ -54,6 +54,9 @@ namespace Food
 
 		void startFoodSpawning();
 		void stopFoodSpawning();
+		void destroyFood();
+
+		bool processFoodCollision(LinkedList::Node* head_node, FoodType& out_food_type);
 		
 	};
 }

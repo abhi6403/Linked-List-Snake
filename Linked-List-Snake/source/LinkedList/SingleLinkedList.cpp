@@ -159,6 +159,11 @@ namespace LinkedList
 		}
 	}
 
+	Node* SingleLinkedList::getHeadNode()
+	{
+		return head_node;
+	}
+
 	void SingleLinkedList::destroy()
 	{
 
