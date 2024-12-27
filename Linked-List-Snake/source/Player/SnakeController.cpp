@@ -9,6 +9,7 @@ namespace Player
 	using namespace Global;
 	using namespace Level;
 	using namespace Event;
+	using namespace Sound;
 
 	SnakeController::SnakeController()
 	{
@@ -122,10 +123,28 @@ namespace Player
 
 	void SnakeController::processSnakeCollision()
 	{
+		processBodyCollision();
+		processElementscollision();
+		processFoodCollision();
+	}
+
+	void SnakeController::processBodyCollision()
+	{
 		if (single_linked_list->processNodeCollision())
 		{
 			current_snake_state = SnakeState::DEAD;
+			ServiceLocator::getInstance()->getSoundService()->playSound(SoundType::DEATH);
 		}
+	}
+
+	void SnakeController::processElementscollision()
+	{
+
+	}
+
+	void SnakeController::processFoodCollision()
+	{
+
 	}
 
 	void SnakeController::handleRestart()
