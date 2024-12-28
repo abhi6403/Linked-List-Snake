@@ -6,6 +6,8 @@
 
 namespace LinkedList
 {
+	using namespace Player;
+
 	SingleLinkedList::SingleLinkedList()
 	{
 		head_node = nullptr;
@@ -127,10 +129,10 @@ namespace LinkedList
 
 	void SingleLinkedList::removeNodeAtIndex(int index)
 	{
+		int current_index = 0;
+
 		Node* cur_node = head_node;
 		Node* previous_node = nullptr;
-
-		int current_index = 0;
 
 		while (cur_node != nullptr && current_index < index)
 		{
@@ -178,7 +180,7 @@ namespace LinkedList
 	void SingleLinkedList::shiftNodesAfterRemoval(Node* cur_node)
 	{
 		Direction previous_node_direction = cur_node->body_part.getDirection();
-		sf::Vector2i previous_node_position = cur_node->body_part.getNextPosition();
+		sf::Vector2i previous_node_position = cur_node->body_part.getPosition();
 
 		cur_node - cur_node->next;
 
@@ -217,6 +219,7 @@ namespace LinkedList
 	{
 		if(head_node == nullptr)
 		{
+			insertNodeAtHead();
 			return;
 		}
 
