@@ -134,7 +134,7 @@ namespace Food
 			out_food_type = current_food_item->getFoodType();
 			return true;
 		}
-
+		 
 		return false;
 	}
 
