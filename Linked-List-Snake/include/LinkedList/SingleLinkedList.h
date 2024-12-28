@@ -44,12 +44,16 @@ namespace LinkedList
 		void removeNodeAtMiddle();
 		void removeNodeAtTail();
 		void insertNodeAtMiddle();
+		void reverseNodeDirections();
 		void updateNodeDirection(Direction direction_to_set);
 		void updateNodePosition();
 		void removeNodeAtHead();
 		void removeAllNodes();
+		void removeHalfNodes();
 		void initializeNode(Node* new_node, Node* reference_node, Operation operation);
 		Node* findNodeAtIndex(int index);
+		Direction reverse();
+		Direction getReverseDirection(Direction reference_direction);
 		int findMiddleNode();
 		std::vector<sf::Vector2i> getNodesPositionList();
 
