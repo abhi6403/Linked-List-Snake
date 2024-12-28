@@ -38,11 +38,13 @@ namespace LinkedList
 		void insertNodeAtHead();
 		void insertNodeAtIndex(int index);
 		void shiftNodesAfterInsertion(Node* new_node, Node* cur_node, Node* prev_node);
+		void insertNodeAtMiddle();
 		void updateNodeDirection(Direction direction_to_set);
 		void updateNodePosition();
 		void removeNodeAtHead();
 		void removeAllNodes();
 		void initializeNode(Node* new_node, Node* reference_node, Operation operation);
+		int findMiddleNode();
 		std::vector<sf::Vector2i> getNodesPositionList();
 
 		Node* getHeadNode();
