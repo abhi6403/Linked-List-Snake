@@ -20,6 +20,11 @@ namespace Player
 		void render();
 
 		void spawnPlayer();
+		int getPlayerScore();
+
+		TimeComplexity getTimeComplexity();
+		LinkedListOperations getLastOperation();
+
 
 		std::vector<sf::Vector2i> getCurrentSnakePositionList();
 	};
