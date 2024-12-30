@@ -5,7 +5,7 @@
 #include<iostream>
 
 
-namespace LinkedList
+namespace LinkedListLib
 {
 	namespace SingleLinked
 	{
@@ -70,10 +70,10 @@ namespace LinkedList
 
 			int midIndex = findMiddleNode();    // Use the existing function to find the middle index
 			Node* new_node = createNode();
-			insertNodeAtIndex(midIndex, new_node);             // Use the existing function to insert the node at the found index             
+			insertNodeAtIndex(midIndex);             // Use the existing function to insert the node at the found index             
 		}
 
-		void SingleLinkedList::insertNodeAtIndex(int index, Node* new_node)
+		void SingleLinkedList::insertNodeAtIndex(int index)
 		{
 			if (index < 0 || index >= linked_list_size) return;
 

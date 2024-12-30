@@ -1,5 +1,6 @@
 #pragma once
 #include"Player/SnakeController.h"
+#include"Level/LevelConfig.h"
 
 namespace Player
 {
@@ -19,7 +20,7 @@ namespace Player
 		void update();
 		void render();
 
-		void spawnPlayer();
+		void spawnPlayer(Level::LinkedListType level_type);
 		int getPlayerScore();
 
 		TimeComplexity getTimeComplexity();

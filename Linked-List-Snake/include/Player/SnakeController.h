@@ -1,12 +1,13 @@
 #pragma once
 #include"Player/Direction.h"
 #include<SFML/System/Vector2.hpp>
-#include"LinkedList/SingleLinkedList/SingleLinkedList.h"
+#include"LinkedList/LinkedList.h"
+#include"Level/LevelConfig.h"
 #include"Food/FoodType.h"
 
 namespace Player
 {
-	using namespace LinkedList;
+	using namespace LinkedListLib;
 	using namespace Food;
 
 	enum class SnakeState
@@ -57,12 +58,13 @@ namespace Player
 		Direction current_snake_direction;
 		SnakeState current_snake_state;
 		InputState current_input_state;
-		SingleLinked::SingleLinkedList* single_linked_list;
+		LinkedList* linked_list;
 		TimeComplexity time_complexity;
 		LinkedListOperations last_linked_list_operation;
 
 
-		void createLinkedList();
+		
+		void initializeLinkedList();
 		void processPlayerInput();
 		void updateSnakeDirection();
 		void moveSnake();
@@ -84,6 +86,8 @@ namespace Player
 		void initialize();
 		void update();
 		void render();
+
+		void createLinkedList(Level::LinkedListType level_type);
 
 		void spawnSnake();
 

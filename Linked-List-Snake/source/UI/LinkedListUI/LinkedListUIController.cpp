@@ -14,6 +14,7 @@ namespace UI
 	using namespace Event;
 	using namespace Sound;
 	using namespace Main;
+	using namespace Level;
 
 	namespace LinkedListUI
 	{
@@ -83,8 +84,8 @@ namespace UI
 		{
 			float x_position = calculateLeftOffsetForButton();
 
-			single_linked_button->initialize("Level One Button", Config::level_one_button_texture_path, button_width, button_height, sf::Vector2f(x_position, single_linked_button_y_position));
-			double_linked_button->initialize("Level Two Button", Config::level_two_button_texture_path, button_width, button_height, sf::Vector2f(x_position, double_linked_button_y_position));
+			single_linked_button->initialize("Level One Button", Config::single_linked_list_button_texture_path, button_width, button_height, sf::Vector2f(x_position, single_linked_button_y_position));
+			double_linked_button->initialize("Level Two Button", Config::double_linked_list_button_texture_path, button_width, button_height, sf::Vector2f(x_position, double_linked_button_y_position));
 			menu_button->initialize("Menu Button", Config::menu_button_texture_path, button_width, button_height, sf::Vector2f(x_position, menu_button_y_position));
 		}
 
@@ -105,12 +106,14 @@ namespace UI
 		{
 			ServiceLocator::getInstance()->getSoundService()->playSound(SoundType::BUTTON_CLICK);
 			GameService::setGameState(GameState::GAMEPLAY);
+			ServiceLocator::getInstance()->getLevelService()->createLevel(LinkedListType::SINGLE_LINKED_LIST);
 		}
 
 		void LinkedListUIController::doubleLinkedButtonCallback()
 		{
 			ServiceLocator::getInstance()->getSoundService()->playSound(SoundType::BUTTON_CLICK);
 			GameService::setGameState(GameState::GAMEPLAY);
+			ServiceLocator::getInstance()->getLevelService()->createLevel(LinkedListType::DOUBLE_LINKED_LIST);
 		}
 
 		void LinkedListUIController::menuButtonCallback()

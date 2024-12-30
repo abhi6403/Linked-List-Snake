@@ -3,7 +3,7 @@
 #include "LinkedList/Node.h"
 #include <vector>
 
-namespace LinkedList
+namespace LinkedListLib
 {
 	enum class Operation
 	{

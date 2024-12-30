@@ -3,7 +3,7 @@
 #include "LinkedList/Node.h"
 #include "LinkedList/LinkedList.h"
 
-namespace LinkedList
+namespace LinkedListLib
 {
 	namespace SingleLinked
 	{
@@ -20,7 +20,7 @@ namespace LinkedList
 			void insertNodeAtTail() override;
 			void insertNodeAtHead() override;
 			void insertNodeAtMiddle() override;
-			void insertNodeAtIndex(int index, Node* new_node);
+			void insertNodeAtIndex(int index) override;
 
 			void shiftNodesAfterInsertion(Node* new_node, Node* cur_node, Node* prev_node);
 

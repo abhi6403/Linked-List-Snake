@@ -1,7 +1,7 @@
 #pragma once
 #include "LinkedList/Node.h"
 
-namespace LinkedList
+namespace LinkedListLib
 {
 	namespace DoubleLinked
 	{

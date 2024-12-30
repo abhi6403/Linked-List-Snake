@@ -2,7 +2,7 @@
 #include"LinkedList/DoubleLinked/DoubleNode.h"
 #include"Level/LevelView.h"
 
-namespace LinkedList
+namespace LinkedListLib
 {
 	namespace DoubleLinked
 	{

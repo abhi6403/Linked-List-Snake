@@ -2,7 +2,7 @@
 #include"Level/LevelView.h"
 #include"Global/Config.h"
 
-namespace LinkedList
+namespace LinkedListLib
 {
 	LinkedList::LinkedList()
 	{
