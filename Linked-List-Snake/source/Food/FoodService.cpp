@@ -10,6 +10,7 @@ namespace Food
 	using namespace Global;
 	using namespace Level;
 	using namespace Player;
+	using namespace LinkedList;
 
 	FoodService::FoodService() : random_engine(random_device())
 	{
@@ -128,7 +129,7 @@ namespace Food
 		}
 	}
 
-	bool FoodService::processFoodCollision(LinkedList::Node* head_node, FoodType& out_food_type)
+	bool FoodService::processFoodCollision(SingleLinked::Node* head_node, FoodType& out_food_type)
 	{
 		if (current_food_item && current_food_item->getFoodPosition() == head_node->body_part.getPosition())
 		{

@@ -1,7 +1,7 @@
 #pragma once
 #include"Player/Direction.h"
 #include<SFML/System/Vector2.hpp>
-#include"LinkedList/SingleLinkedList.h"
+#include"LinkedList/SingleLinkedList/SingleLinkedList.h"
 #include"Food/FoodType.h"
 
 namespace Player
@@ -57,7 +57,7 @@ namespace Player
 		Direction current_snake_direction;
 		SnakeState current_snake_state;
 		InputState current_input_state;
-		SingleLinkedList* single_linked_list;
+		SingleLinked::SingleLinkedList* single_linked_list;
 		TimeComplexity time_complexity;
 		LinkedListOperations last_linked_list_operation;
 

@@ -1,6 +1,6 @@
 #pragma once
 #include"Level//LevelService.h"
-#include"Level/LevelNumber.h"
+#include"Level/LevelConfig.h"
 #include"Element/ElementData.h"
 
 namespace Level

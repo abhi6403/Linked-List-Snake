@@ -32,7 +32,6 @@ namespace UI
 			void initializeButtons();
 
 			float calculateLeftOffsetForButton();
-			float calculateRightOffsetForButton();
 
 			void levelOneButtonCallback();
 			void levelTwoButtonCallback();
