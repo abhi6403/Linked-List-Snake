@@ -26,6 +26,7 @@ namespace Player
 		TimeComplexity getTimeComplexity();
 		LinkedListOperations getLastOperation();
 
+		bool isPlayerDead();
 
 		std::vector<sf::Vector2i> getCurrentSnakePositionList();
 	};
