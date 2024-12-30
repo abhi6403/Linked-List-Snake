@@ -142,6 +142,8 @@
     <ClCompile Include="source\Level\LevelModel.cpp" />
     <ClCompile Include="source\Level\LevelService.cpp" />
     <ClCompile Include="source\Level\LevelView.cpp" />
+    <ClCompile Include="source\LinkedList\DoubleLinkedList.cpp" />
+    <ClCompile Include="source\LinkedList\LinkedList.cpp" />
     <ClCompile Include="source\LinkedList\SingleLinkedList.cpp" />
     <ClCompile Include="source\Player\BodyPart.cpp" />
     <ClCompile Include="source\Player\PlayerService.cpp" />
@@ -180,7 +182,11 @@
     <ClInclude Include="include\Level\LevelNumber.h" />
     <ClInclude Include="include\Level\LevelService.h" />
     <ClInclude Include="include\Level\LevelView.h" />
-    <ClInclude Include="include\LinkedList\SingleLinkedList.h" />
+    <ClInclude Include="include\LinkedList\DoubleLinked\DoubleLinkedList.h" />
+    <ClInclude Include="include\LinkedList\DoubleLinked\DoubleNode.h" />
+    <ClInclude Include="include\LinkedList\LinkedList.h" />
+    <ClInclude Include="include\LinkedList\SingleLinkedList\SingleLinkedList.h" />
+    <ClInclude Include="include\LinkedList\SingleLinkedList\SingleNode.h" />
     <ClInclude Include="include\Player\BodyPart.h" />
     <ClInclude Include="include\Player\PlayerService.h" />
     <ClInclude Include="include\LinkedList\Node.h" />
