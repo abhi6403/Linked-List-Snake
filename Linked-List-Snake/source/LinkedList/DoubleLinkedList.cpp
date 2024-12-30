@@ -98,6 +98,7 @@ namespace LinkedList
             prev_node->next = new_node;
             static_cast<DoubleNode*>(new_node)->previous = prev_node;
             new_node->next = cur_node;
+            static_cast<DoubleNode*>(cur_node)->previous = new_node;
             initializeNode(new_node, prev_node, Operation::TAIL);
             linked_list_size++;
             shiftNodesAfterInsertion(new_node, cur_node, prev_node);
@@ -128,7 +129,18 @@ namespace LinkedList
 
         void DoubleLinkedList::removeNodeAtHead()
         {
+            linked_list_size--;
 
+            Node* cur_node = head_node;
+            head_node = head_node->next;
+
+            if (head_node != nullptr)
+            {
+                static_cast<DoubleNode*>(head_node)->previous = nullptr;
+            }
+
+            cur_node->next = nullptr;
+            delete cur_node;
         }
 
         void DoubleLinkedList::removeNodeAtMiddle()
